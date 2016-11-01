@@ -78,7 +78,7 @@ def urlExists(String repositoryUrl) {
 
     try {
         def connection = (HttpURLConnection) new URL(repositoryUrl).openConnection()
-
+println("b64: " + getBase64EncodedCredentials())
         connection.setRequestProperty("Authorization", "Basic " + getBase64EncodedCredentials())
         connection.setConnectTimeout(10000)
         connection.setReadTimeout(10000)
