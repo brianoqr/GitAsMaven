@@ -79,7 +79,7 @@ def urlExists(String repositoryUrl) {
     try {
         def connection = (HttpURLConnection) new URL(repositoryUrl).openConnection()
 
-        connection.setRequestProperty("Authorization", "Basic " + getBase64EncodedCredentials())
+       // connection.setRequestProperty("Authorization", "Basic " + getBase64EncodedCredentials())
         connection.setConnectTimeout(10000)
         connection.setReadTimeout(10000)
         connection.setRequestMethod("HEAD")
@@ -96,8 +96,9 @@ def urlExists(String repositoryUrl) {
         return false
     }
 }
-
+/*
 def getBase64EncodedCredentials() {
     def s = USERNAME + ":" + PASSWORD;
     return s.bytes.encodeBase64().toString()
 }
+*/
